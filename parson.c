@@ -61,8 +61,8 @@
 #define IS_NUMBER_INVALID(x) (((x) * 0.0) != 0.0)
 #endif
 
-static JSON_Malloc_Function parson_malloc = malloc;
-static JSON_Free_Function parson_free = free;
+static JSON_Malloc_Function parson_malloc = pvPortMalloc;
+static JSON_Free_Function parson_free = vPortFree;
 
 static int parson_escape_slashes = 1;
 
